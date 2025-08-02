@@ -1,305 +1,297 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
-  padding: 0;
-  margin: 0;
-  font-family: "Roboto", sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
 }
 html,
 body {
-  height: 100%;
+	height: 100%;
 }
 
 body {
-  background-color: black;
-  color: white;
+	background-color: black;
+	color: white;
 }
 
 .left {
-  padding: 10px;
-  width: 25vw;
-  height: 100%;
+	padding: 10px;
+	width: 25vw;
+	height: 100%;
 }
 .right {
-  width: 75vw;
-  margin: 16px 0px;
-  position: relative;
+	width: 75vw;
+	margin: 16px 0px;
+	position: relative;
 }
 
 .home ul li {
-  display: flex;
-  gap: 15px;
-  width: 14px;
-  list-style: none;
-  padding-top: 14px;
+	display: flex;
+	gap: 15px;
+	width: 14px;
+	list-style: none;
+	padding-top: 14px;
 }
 .library {
-  position: relative;
-  min-height: 70vh;
+	position: relative;
+	min-height: 70vh;
 }
 .library img {
-  display: flex;
-  align-self: flex-start;
-  justify-content: start;
+	display: flex;
+	align-self: flex-start;
+	justify-content: start;
 }
 .heading {
-  display: flex;
-  gap: 15px;
-  padding-top: 14px;
-  font-size: 13px;
+	display: flex;
+	gap: 15px;
+	padding-top: 14px;
+	font-size: 13px;
 }
 
 .heading h2 {
-  padding-top: 2px;
-  text-align: left;
+	padding-top: 2px;
+	text-align: left;
 }
 .heading img {
-  width: 30px;
+	width: 30px;
 }
 .footer {
-  display: flex;
-  font-size: 9px;
-  gap: 12px;
-  text-align: left;
-  position: absolute;
-  bottom: 0px;
-  padding: 20px;
-  justify-content: space-around;
+	display: flex;
+	font-size: 9px;
+	gap: 12px;
+	text-align: left;
+	position: absolute;
+	bottom: 0px;
+	padding: 20px;
+	justify-content: space-around;
 }
 .footer a {
-  color: grey;
-  text-decoration: none;
+	color: grey;
+	text-decoration: none;
 }
 .header {
-  background-color: rgb(34, 34, 34);
-  display: flex;
-  justify-content: space-between;
+	background-color: rgb(34, 34, 34);
+	display: flex;
+	justify-content: space-between;
 }
 .header > * {
-  padding: 20px;
+	padding: 20px;
 }
 .spotify-playlists {
-  padding: 16px;
+	padding: 16px;
 }
 .spotify-playlists h1 {
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  font-size: 24px;
-  margin-bottom: 8px;
+	font-family: "Lato", sans-serif;
+	font-weight: 700;
+	font-size: 24px;
+	margin-bottom: 8px;
 }
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  max-height: 70vh;
-  overflow-y: scroll;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	max-height: 70vh;
+	overflow-y: scroll;
 }
 .spotify-playlists .card {
-  width: 200px;
-  padding: 10px;
-  border-radius: 5px;
-  position: relative;
+	width: 200px;
+	padding: 10px;
+	border-radius: 5px;
+	position: relative;
 }
 .card:hover {
-  background-color: rgb(34, 34, 34);
+	background-color: rgb(34, 34, 34);
 
-  transition: background-color ease;
+	transition: background-color ease;
 }
 .card img {
-  width: 100%;
-  object-fit: contain;
-  border-radius: 5px;
+	width: 100%;
+	object-fit: contain;
+	border-radius: 5px;
 }
 .card p {
-  font-size: 13px;
-  margin-top: 5px;
-  line-height: 20px;
-  color: grey;
+	font-size: 13px;
+	margin-top: 5px;
+	line-height: 20px;
+	color: grey;
 }
 .card h2 {
-  line-height: 23px;
-  font-size: 18px;
-  font-weight: 500;
-  margin-top: 10px;
+	line-height: 23px;
+	font-size: 18px;
+	font-weight: 500;
+	margin-top: 10px;
 }
 .play {
-  height: 50px;
-  width: 50px;
-  background-color: #1fdf64;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  right: 17px;
-  opacity: 0;
-  transform: translateY(20px);
-  top: 140px;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+	height: 50px;
+	width: 50px;
+	background-color: #1fdf64;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: 17px;
+	opacity: 0;
+	transform: translateY(20px);
+	top: 140px;
+	transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .card:hover .play {
-  opacity: 1;
-  transition: opacity 0.3s ease;
-  transform: translateY(0);
+	opacity: 1;
+	transition: opacity 0.3s ease;
+	transform: translateY(0);
 }
 .buttons > * {
-  padding: 0 16px;
+	padding: 0 16px;
 }
 .signupbtn {
-  background-color: rgb(34, 34, 34);
-  color: gray;
-  border: none;
-  font-weight: bold;
-  transform: scale(1);
+	background-color: rgb(34, 34, 34);
+	color: gray;
+	border: none;
+	font-weight: bold;
+	transform: scale(1);
 
-  font-size: 1rem;
-  outline: none;
+	font-size: 1rem;
+	outline: none;
 }
 .signupbtn:hover {
-  color: white;
-  transform: scale(1.03);
-  cursor: pointer;
-  transition: transform 0.3s ease;
+	color: white;
+	transform: scale(1.03);
+	cursor: pointer;
+	transition: transform 0.3s ease;
 }
 .loginbtn {
-  color: black;
-  font-weight: bolder;
-  border-radius: 22px;
-  padding: 12px 25px;
-  border: none;
-  outline: none;
+	color: black;
+	font-weight: bolder;
+	border-radius: 22px;
+	padding: 12px 25px;
+	border: none;
+	outline: none;
 }
 .loginbtn:hover {
-  transform: scale(1.03);
-  cursor: pointer;
-  transition: transform 0.3s ease;
+	transform: scale(1.03);
+	cursor: pointer;
+	transition: transform 0.3s ease;
 }
 
 .songList {
-  height: 59vh;
-  overflow-y: scroll;
-  line-height: 30px;
-  color: white;
-  margin-bottom: 75px;
-  overflow: auto;
-  margin-top: 20px;
+	height: 59vh;
+	overflow-y: scroll;
+	line-height: 30px;
+	color: white;
+	margin-bottom: 75px;
+	overflow: auto;
+	margin-top: 20px;
 }
 .songItem {
-  padding: 6px 10px;
-  line-height: 1.4;
-  cursor: pointer;
-  border: 1.5px solid gray;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  margin-right: 5px;
+	padding: 6px 10px;
+	line-height: 1.4;
+	cursor: pointer;
+	border: 1.5px solid gray;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	margin-right: 5px;
 
-  background-color: #1f1f1f;
+	background-color: #1f1f1f;
 }
 .songItem:hover {
-  color: white;
-  background-color: rgb(36, 35, 35);
+	color: white;
+	background-color: rgb(36, 35, 35);
 }
 .playbar {
-  width: 70vw;
-  height: 85px;
-  border-radius: 30px;
-  background-color: #181818;
-  padding: 10px 20px;
-  box-sizing: border-box;
-  color: white;
-  font-family: sans-serif;
-  position: fixed;
-  bottom: 10px;
+	width: 70vw;
+	height: 80px;
+	border-radius: 30px;
+	background-color: #181818;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	color: white;
+	font-family: sans-serif;
+	position: fixed;
+	bottom: 50px;
 }
 .songinfo {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 8px;
-  flex: 1;
+	margin-bottom: 8px;
+	width: fit-content;
 }
 .seekbar {
-  border: none; /* Remove border */
-  width: 100%;
-  position: relative;
-  margin: 0px 7px;
-  margin-top: 15px;
-  height: 6px;
-  background: #444;
-  border-radius: 50px;
+	border: none; /* Remove border */
+	width: 100%;
+	position: relative;
+	margin: 0px 7px;
+	margin-top: 15px;
+	height: 6px;
+	background: #444;
+	border-radius: 50px;
 
-  position: relative;
+	position: relative;
 }
 .seekbar:hover {
-  cursor: pointer;
+	cursor: pointer;
 }
 .progressbar {
-  height: 100%;
-  width: 0%;
-  background-color: #1fdf64;
-  transition: width 0.1s;
+	height: 100%;
+	width: 0%;
+	background-color: #1fdf64;
+	transition: width 0.1s;
 }
 .circle {
-  height: 12px;
-  width: 12px;
-  background-color: #d7dbd8;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 0%; /* Starting at 0% progress */
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  transition: left 0.1s;
+	height: 12px;
+	width: 12px;
+	background-color: #d7dbd8;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 0%; /* Starting at 0% progress */
+	transform: translate(-50%, -50%);
+	z-index: 10;
+	transition: left 0.1s;
 }
 
 .volbar {
-  height: 4px;
-  background-color: gray;
-  width: 100px;
-  border-radius: 50px;
-  cursor: pointer;
-  position: relative;
+	height: 4px;
+	background-color: gray;
+	width: 100px;
+	border-radius: 50px;
+	cursor: pointer;
+	position: relative;
 }
 .volFill {
-  background-color: #e5ebe7;
-  transition: width 0.1s;
-  height: 100%;
-  width: 50%;
-  border-radius: 50px;
+	background-color: #e5ebe7;
+	transition: width 0.1s;
+	height: 100%;
+	width: 50%;
+	border-radius: 50px;
 }
 
 .top-section {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	padding-top: 10px;
+	gap: 155px;
 }
 .time {
-  min-width: 200px;
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 .songbuttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-  font-size: 1px;
-  padding-top: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 18px;
+	font-size: 1px;
 }
 
 .time-volume {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+	display: flex;
+	align-items: center;
+	gap: 15px;
 }
 .volume-control {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.mute
-{cursor: pointer;
-  background-image: url("mute.svg");
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
