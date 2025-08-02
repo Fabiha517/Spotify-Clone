@@ -7,7 +7,8 @@
   <title>Spotify - Web Player: Music for everyone</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="utility.css" />
- 
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
 </head>
 
 <body>
@@ -112,22 +113,31 @@
 
         </div>
         <div class="playbar">
-          <div class="songinfo"></div>
+          <div class="top-section">
+            <div class="songinfo"></div>
 
-          <div class="songbuttons">
-            <div class="prevsong invert"><img src="prev.svg" alt=""></div>
-            <div class="playsvg invert">
-              <img src="playbuttons.svg" alt="play/pause" />
+            <div class="songbuttons">
+              <div class="prevsong invert"><img src="prev.svg" alt=""></div>
+              <div class="playsvg invert">
+                <img src="playbuttons.svg" alt="play/pause" />
+              </div>
+              <div class="nextsong invert">
+                <img src="next.svg" alt="">
+              </div>
             </div>
-            <div class="nextsong invert">
-              <img src="next.svg" alt="">
-            </div>
-          </div>
-          <div class="songtime">
-            <span id="currentTime"></span>
-            <span id="duration"></span>
-          </div>
+            <div class="time-volume">
+              <div class="time"><span id="currentTime"></span>
+              <span id="duration"></span></div>
 
+              <div class="volume-control">
+                <span class="volume invert"><img src="sound.svg" alt=""> </span>
+                <div class="volbar">
+                  <div class="volFill"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
           <div class="seekbar">
             <div class="progressbar"></div>
             <div class="circle"></div>

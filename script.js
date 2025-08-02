@@ -149,3 +149,28 @@ function clickseekbar() {
   });
 }
 clickseekbar();
+
+function adjustVolume() {
+  const volbar = document.querySelector(".volbar");
+  const volFill = document.querySelector(".volFill");
+  volbar.addEventListener("click", (e) => {
+    const volbarwidth = volbar.clientWidth;
+    const clickX = e.offsetX;
+    const volume = clickX / volbarwidth;
+    audio.volume = volume;
+
+    volFill.style.width = `${volume * 100}%`;
+  });
+}
+adjustVolume();
+function mute() {
+  const volume = (document.querySelector(".volume").src = "mute.svg");
+
+ if (volume.addEventListener("click", () =>)) {
+   
+      {volume.src = "mute.svg";}
+     else {
+      volume.src = "sound.svg";
+    }
+  });
+}
