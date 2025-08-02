@@ -6,18 +6,9 @@ let currentsongIndex = 0;
 async function getSongs() {
   try {
     const response = await fetch("songs.json");
-    // “Give me the entire HTML text of the response.”
     songs = await response.json();
     showSongs();
   } catch (error) {
-    //   let div = document.createElement("div");
-    //   div.innerHTML = response;
-    //   let as = div.getElementsByTagName("a");
-    //   for (let i = 0; i < as.length; i++) {
-    //     if (as[i].href.endsWith(".mp3")) {
-    //       songs.push(as[i].href);
-    //     }
-    //   }
     console.error("Could not load songs.json", error);
   }
 }
