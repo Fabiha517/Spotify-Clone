@@ -42,7 +42,8 @@ function showSongs() {
       <div style="font-size: 0.85rem;">${artistName}</div>
     </div>
 		</div>
-		<div>
+		<div style="display: flex; justify-content: space-between; align-items: center; gap:6px">
+		<span >Play</span>
 		 <span class="playBtnsvg invert" ><img src="play.svg" alt=""></span>
        </div>
   </div>
@@ -58,6 +59,7 @@ function playSong(index) {
 	currentsongIndex = index;
 	audio.src = songs[index];
 	audio.play();
+	showDuration();
 	let fullname = decodeURIComponent(
 		songs[index].split("/").pop().replaceAll(".mp3", "")
 	);
@@ -75,7 +77,7 @@ document.querySelector(".playsvg").addEventListener("click", () => {
 		playImg.src = "pause.svg";
 	} else {
 		audio.pause();
-		playImg.src = "play.svg";
+		playImg.src = "playbuttons.svg";
 	}
 });
 
@@ -98,3 +100,58 @@ document.querySelector(".prevsong").addEventListener("click", () => {
 });
 
 getSongs(); // Call to fetch and start everything
+
+// Making the songinfo() function so that the  buttons are not pushed down each time the song name comes on the play bar
+function songinfo() {
+	let songinfo = document.querySelector(".songinfo");
+	songinfo.style.visibility = "hidden";
+	if (audio.play()) {
+		songinfo.style.visibility = "visible";
+	}
+}
+songinfo();
+
+// Time duration of song
+function showDuration() {
+	//  convert seconds to minutes:seconds
+	function formatTime(seconds) {
+		const mins = Math.floor(seconds / 60);
+		const secs = Math.floor(seconds % 60);
+		return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+	}
+
+	const durationText = document.getElementById("duration");
+	const currentTimeText = document.getElementById("currentTime");
+	let circle = document.querySelector(".circle");
+	let progressbar = document.querySelector(".progressbar");
+
+	// Duration is available only after metadata is loaded
+	// or
+	// When metadata is loaded, show duration
+	audio.addEventListener("loadedmetadata", () => {
+		durationText.textContent = formatTime(audio.duration);
+	});
+
+	// Update current time every second
+	audio.addEventListener("timeupdate", () => {
+		currentTimeText.textContent = `${formatTime(audio.currentTime)} / `;
+		// Move the circle on the seekbar
+		const progress = (audio.currentTime / audio.duration) * 100;
+		circle.style.left = `${progress}%`;
+		progressbar.style.width = `${progress}%`;
+	});
+}
+function clickseekbar() {
+	let seekbar = document.querySelector(".seekbar");
+	seekbar.addEventListener("click", (e) => {
+		const seekbarWidth = seekbar.clientWidth;
+		const clickX = e.offsetX;
+		const clickPercent = clickX / seekbarWidth;
+		const newTime = clickPercent * audio.duration;
+		audio.currentTime = newTime;
+		const progressbar = clickPercent * 100;
+		document.querySelector(".progressbar").style.width = `${progressPercent}%`;
+		document.querySelector(".circle").style.left = `${progressPercent}%`;
+	});
+}
+clickseekbar()

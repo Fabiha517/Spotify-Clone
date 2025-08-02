@@ -59,11 +59,7 @@
               <span data-encore-id="type">Accessibility</span>
             </a>
           </div>
-          <div>
-            <a draggable="false" href="https://www.spotify.com/legal/cookies-policy/" target="_blank" rel="noopener">
-              <span data-encore-id="text">Cookies</span>
-            </a>
-          </div>
+
         </div>
       </div>
 
@@ -118,15 +114,24 @@
         </div>
         <div class="playbar">
           <div class="songinfo"></div>
+
           <div class="songbuttons">
             <div class="prevsong invert"><img src="prev.svg" alt=""></div>
             <div class="playsvg invert">
-              <img src="play.svg" alt="play/pause" />
+              <img src="playbuttons.svg" alt="play/pause" />
             </div>
             <div class="nextsong invert">
               <img src="next.svg" alt="">
             </div>
-            <div class="songtime"></div>
+          </div>
+          <div class="songtime">
+            <span id="currentTime"></span>
+            <span id="duration"></span>
+          </div>
+
+          <div class="seekbar">
+            <div class="progressbar"></div>
+            <div class="circle"></div>
           </div>
         </div>
       </div>

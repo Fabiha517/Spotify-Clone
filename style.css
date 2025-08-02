@@ -5,6 +5,10 @@
 	margin: 0;
 	font-family: "Roboto", sans-serif;
 }
+html,
+body {
+	height: 100%;
+}
 
 body {
 	background-color: black;
@@ -14,6 +18,7 @@ body {
 .left {
 	padding: 10px;
 	width: 25vw;
+	height: 100%;
 }
 .right {
 	width: 75vw;
@@ -30,7 +35,7 @@ body {
 }
 .library {
 	position: relative;
-	min-height: 80vh;
+	min-height: 70vh;
 }
 .library img {
 	display: flex;
@@ -53,12 +58,13 @@ body {
 }
 .footer {
 	display: flex;
-	font-size: 11px;
+	font-size: 9px;
 	gap: 12px;
+	text-align: left;
 	position: absolute;
 	bottom: 0px;
-	padding: 10px;
-	justify-content: space-evenly;
+	padding: 20px;
+	justify-content: space-around;
 }
 .footer a {
 	color: grey;
@@ -172,7 +178,7 @@ body {
 	position: fixed;
 	bottom: 30px;
 	width: 70vw;
-
+	height: 70px;
 	border-radius: 30px;
 	background-color: #181818;
 	padding: 12px;
@@ -181,30 +187,76 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 10px;
+	gap: 18px;
+	font-size: 1px;
+	padding-top: 20px;
 }
+
 .songList {
-	height: 60vh;
+	height: 59vh;
 	overflow-y: scroll;
 	line-height: 30px;
-
 	color: white;
-	margin: 10px auto;
+	margin-bottom: 75px;
+	overflow: auto;
+	margin-top: 20px;
 }
 .songItem {
 	padding: 6px 10px;
 	line-height: 1.4;
 	cursor: pointer;
-	border: 2px solid gray;
+	border: 1.5px solid gray;
 	border-radius: 5px;
-	margin-bottom: 5px;
-	height: 13%;
+	margin-bottom: 10px;
+	margin-right: 5px;
+
+	background-color: #1f1f1f;
 }
 .songItem:hover {
 	color: white;
 	background-color: rgb(36, 35, 35);
 }
-
-
-
-
+.songinfo {
+	margin-top: 8px;
+	position: absolute;
+	padding: 8px 22px;
+	display: inline;
+	font-size: 17px;
+	font-weight: 300;
+}
+.seekbar {
+	height: 4px; /* Thin horizontal line */
+	background-color: white;
+	border: none; /* Remove border */
+	border-radius: 2px;
+	width: 100%;
+	position: relative;
+	margin: 0px 7px;
+	margin-top: 15px;
+}
+.seekbar:hover{
+  cursor: pointer;
+}
+.progressbar{
+  height: 100%;
+  width: 0%;
+  background-color: #1fdf64;
+  transition: width 0.1s;
+}
+.circle {
+	height: 12px;
+	width: 12px;
+	background-color: #d7dbd8;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 0%; /* Starting at 0% progress */
+	transform: translate(-50%, -50%);
+	z-index: 10;
+	transition: left 0.1s;
+}
+.songtime {
+	position: absolute;
+	right: 100px;
+	top: 35px;
+}
