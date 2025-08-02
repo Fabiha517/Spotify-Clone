@@ -33,6 +33,9 @@ body {
 	list-style: none;
 	padding-top: 14px;
 }
+.home ul li:hover{
+  text-decoration: underline;
+}
 .library {
 	position: relative;
 	min-height: 70vh;
@@ -212,6 +215,7 @@ body {
 	bottom: 50px;
 }
 .songinfo {
+  
 	margin-bottom: 8px;
 	width: fit-content;
 }
@@ -294,4 +298,14 @@ body {
 	display: flex;
 	align-items: center;
 	gap: 8px;
+}
+.volume{
+  cursor: pointer;
+
+}
+.music-info{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
 }

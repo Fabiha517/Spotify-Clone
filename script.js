@@ -25,12 +25,12 @@ function showSongs() {
 		let div = document.createElement("div");
 		div.className = "songItem";
 		div.innerHTML = `
-		 <div style="display: flex; justify-content: space-between; align-items: center;">
+	<div style="display: flex; justify-content: space-between; align-items: center;">
   <div style="display: flex; align-items: center; gap: 10px;">
     <span class="musicsvg invert">
       <img src="music.svg" alt="">
     </span>
-		 
+
     <div>
       <div style="font-weight: bold; ">${songTitle}</div>
       <div style="font-size: 0.85rem;">${artistName}</div>
@@ -38,8 +38,8 @@ function showSongs() {
 		</div>
 		<div style="display: flex; justify-content: space-between; align-items: center; gap:6px">
 		<span >Play</span>
-		 <span class="playBtnsvg invert" ><img src="play.svg" alt=""></span>
-       </div>
+		<span class="playBtnsvg invert" ><img src="play.svg" alt=""></span>
+      </div>
   </div>
 `;
 
@@ -101,6 +101,7 @@ function songinfo() {
 	songinfo.style.visibility = "hidden";
 	if (audio.play()) {
 		songinfo.style.visibility = "visible";
+   
 	}
 }
 songinfo();
@@ -144,8 +145,8 @@ function clickseekbar() {
 		const newTime = clickPercent * audio.duration;
 		audio.currentTime = newTime;
 		const progressbar = clickPercent * 100;
-		document.querySelector(".progressbar").style.width = `${progressPercent}%`;
-		document.querySelector(".circle").style.left = `${progressPercent}%`;
+		document.querySelector(".progressbar").style.width = `${progressbar}%`;
+		document.querySelector(".circle").style.left = `${progressbar}%`;
 	});
 }
 clickseekbar();
