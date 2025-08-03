@@ -48,7 +48,10 @@ function showSongs() {
 		});
 		songList.appendChild(div);
 	});
+	//  Called after songItems are created
+	setUpSongItemClose();
 }
+
 function playSong(index) {
 	currentsongIndex = index;
 	audio.src = songs[index];
@@ -94,17 +97,25 @@ document.querySelector(".prevsong").addEventListener("click", () => {
 });
 
 getSongs(); // Call to fetch and start everything
-
+audio.addEventListener("play", songinfo);
+audio.addEventListener("pause", songinfo);
 // Making the songinfo() function so that the  buttons are not pushed down each time the song name comes on the play bar
 function songinfo() {
 	let songinfo = document.querySelector(".songinfo");
-	songinfo.style.visibility = "hidden";
-	if (audio.play()) {
+	let music = document.querySelector(".music");
+	console.log("Audio paused?", audio.paused);
+	if (audio.ended ) {
+		music.style.visibility = "hidden";
+		songinfo.style.visibility = "hidden";
+	} else {
+		music.style.visibility = "visible";
 		songinfo.style.visibility = "visible";
-   
 	}
 }
-songinfo();
+//  songinfo() should only run when triggered by play, pause, or ended events
+audio.addEventListener("play", songinfo);
+audio.addEventListener("pause", songinfo);
+audio.addEventListener("ended", songinfo);
 
 // Time duration of song
 function showDuration() {
@@ -177,3 +188,87 @@ function adjustVolume() {
 	});
 }
 adjustVolume();
+function hamburger() {
+	let hamburger = document.querySelector(".hamburger");
+	const close = document.querySelector(".close");
+	const left = document.querySelector(".left");
+
+	hamburger.addEventListener("click", () => {
+		left.classList.add("show");
+	});
+
+	close.addEventListener("click", () => {
+		left.classList.remove("show");
+	});
+}
+function setUpSongItemClose() {
+	const left = document.querySelector(".left");
+	let songItems = document.querySelectorAll(".songItem");
+
+	songItems.forEach((item) => {
+		item.addEventListener("click", () => {
+			left.classList.remove("show");
+		});
+	});
+}
+hamburger();
+
+const mq = window.matchMedia("(max-width: 1000px)");
+const header = document.querySelector(".header");
+
+function handleHeaderBorder() {
+	if (mq.matches) {
+		header.classList.remove("rounded");
+	} else {
+		header.classList.add("rounded");
+	}
+}
+
+// Call once when page loads
+handleHeaderBorder(mq);
+
+// Listen for changes (resizing screen)
+mq.addEventListener("change", handleHeaderBorder);
+
+const meq = window.matchMedia("(max-width: 500px)");
+
+function hideVolbar() {
+	const volbar = document.querySelector(".volbar");
+	const volume = document.querySelector(".volume");
+
+	if (!volbar || !volume) return; // safety check
+
+	function showVolbar() {
+		console.log("Hovered over volume");
+		volbar.style.width = "50px";
+	}
+
+	function hideVolbarNow() {
+		volbar.style.width = "0";
+	}
+
+	function applyHoverEffect() {
+		// Add listeners only once
+		volume.addEventListener("mouseenter", showVolbar);
+		volume.addEventListener("mouseleave", hideVolbarNow);
+		hideVolbarNow(); // hide initially
+	}
+
+	function removeHoverEffect() {
+		volume.removeEventListener("mouseenter", showVolbar);
+		volume.removeEventListener("mouseleave", hideVolbarNow);
+		volbar.style.width = ""; // reset style
+	}
+
+	if (meq.matches) {
+		applyHoverEffect();
+	} else {
+		removeHoverEffect();
+	}
+}
+
+// Run initially
+hideVolbar();
+
+// Update on screen resize too
+meq.addEventListener("change", hideVolbar);
