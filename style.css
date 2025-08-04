@@ -5,6 +5,9 @@
 	margin: 0;
 	font-family: "Roboto", sans-serif;
 }
+* {
+	box-sizing: border-box;
+}
 
 body {
 	background-color: black;
@@ -86,62 +89,14 @@ body {
 	font-family: "Lato", sans-serif;
 	font-weight: 700;
 	font-size: 24px;
-	margin-bottom: 8px;
+	margin-bottom: 13px;
 }
-.card-container {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 20px;
-	max-height: 70vh;
-	overflow-y: auto;
-}
-.spotify-playlists .card {
-	width: 200px;
-	padding: 10px;
-	border-radius: 5px;
-	position: relative;
-}
-.card:hover {
-	background-color: rgb(34, 34, 34);
 
-	transition: background-color ease;
-}
-.card img {
-	width: 100%;
-	object-fit: contain;
-	border-radius: 5px;
-}
 .card p {
 	font-size: 13px;
 	margin-top: 5px;
 	line-height: 20px;
 	color: grey;
-}
-.card h2 {
-	line-height: 23px;
-	font-size: 18px;
-	font-weight: 500;
-	margin-top: 10px;
-}
-.play {
-	height: 50px;
-	width: 50px;
-	background-color: #1fdf64;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-	right: 17px;
-	opacity: 0;
-	transform: translateY(20px);
-	top: 140px;
-	transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.card:hover .play {
-	opacity: 1;
-	transition: opacity 0.3s ease;
-	transform: translateY(0);
 }
 
 .nav svg:hover {
@@ -330,6 +285,67 @@ body {
 .songinfo {
 	visibility: hidden;
 }
+.albums {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	max-height: 70vh;
+	overflow-y: auto;
+	padding-bottom: 50px;
+}
+.albumName {
+	line-height: 23px;
+	font-size: 22px;
+	font-weight: 500;
+	margin-top: 10px;
+}
+.albumCard {
+	background-color: #121212;
+	color: white;
+	border-radius: 8px;
+	padding: 10px;
+	margin: 3px;
+	width: 200px;
+	cursor: pointer;
+	transition: transform 0.2s;
+}
+.albumCard:hover {
+	transform: scale(1.05);
+	background-color: #1a1a1a;
+	background-color: rgb(34, 34, 34);
+}
+.albums img {
+	width: 100%;
+	object-fit: contain;
+	border-radius: 5px;
+}
+.play {
+	height: 50px;
+	width: 50px;
+	background-color: #1fdf64;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: 17px;
+	opacity: 0;
+	transform: translateY(20px);
+	top: 120px;
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.albumCard:hover .play {
+	opacity: 1;
+	transition: opacity 0.3s ease;
+	transform: translateY(0);
+}
+.albumDesc {
+	font-size: 13px;
+	margin-top: 5px;
+	line-height: 20px;
+	color: grey;
+}
+
 @media (max-width: 1000px) {
 	.left {
 		position: absolute;
@@ -368,6 +384,10 @@ body {
 	.songbuttons {
 		width: 0px;
 		gap: 3px;
+	}
+	.albumCard{
+	margin: 0 auto;
+
 	}
 }
 @media (max-width: 500px) {
@@ -414,14 +434,15 @@ body {
 		max-width: 100%;
 		font-size: 14px;
 	}
-	.card-container {
-		justify-content: center;
-		margin: 2px;
+	.albums {
+		justify-items: center;
 	}
-	.spotify-playlists .card {
-		width: 90vw;
+	.albumCard {
+		margin: 2px;
+		width: 86vw;
+		justify-self:center ;
 	}
 	.header > * {
-    padding: 10px;
-}
+		padding: 10px;
+	}
 }

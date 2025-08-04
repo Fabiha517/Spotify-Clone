@@ -3,13 +3,44 @@ var audio = new Audio();
 let songs = [];
 let currentsongIndex = 0;
 
-async function getSongs() {
+async function showAlbums() {
+	const albumsList = document.querySelector(".albums");
 	try {
-		const response = await fetch("songs.json");
+		const response = await fetch("songs/albums.json");
+		const albums = await response.json();
+
+		albums.forEach((album) => {
+			const albumCard = document.createElement("div");
+			albumCard.className = "albumCard";
+
+			albumCard.innerHTML = `
+        <div class="play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                color="#000000" fill="black">
+                <path
+                  d="M18.8906 12.846C18.5371 14.189 16.8667 15.138 13.5257 17.0361C10.296 18.8709 8.6812 19.7884 7.37983 19.4196C6.8418 19.2671 6.35159 18.9776 5.95624 18.5787C5 17.6139 5 15.7426 5 12C5 8.2574 5 6.3861 5.95624 5.42132C6.35159 5.02245 6.8418 4.73288 7.37983 4.58042C8.6812 4.21165 10.296 5.12907 13.5257 6.96393C16.8667 8.86197 18.5371 9.811 18.8906 11.154C19.0365 11.7084 19.0365 12.2916 18.8906 12.846Z"
+                  stroke="#141B34" stroke-width="1.5" stroke-linejoin="round" />
+              </svg></div>
+    <img src="${album.cover}" alt="${
+				album.name
+			}" style="width:100%; border-radius:8px; margin-bottom:0.5rem; ">
+    <div class="albumName">${album.displayName}</div>
+		 <p class="albumDesc">${album.desc || ""}</p>
+  `;
+			albumCard.addEventListener("click", () => loadAlbum(album.name));
+			albumsList.appendChild(albumCard);
+		});
+	} catch (error) {
+		console.log("Could not load albums.json", error);
+	}
+}
+async function loadAlbum(albumName) {
+	try {
+		let response = await fetch(`songs/${albumName}/songs.json`);
 		songs = await response.json();
 		showSongs();
+		playSong(0);
 	} catch (error) {
-		console.error("Could not load songs.json", error);
+		console.log(`Could not load songs from album ${albumName}`, error);
 	}
 }
 
@@ -96,7 +127,7 @@ document.querySelector(".prevsong").addEventListener("click", () => {
 	}
 });
 
-getSongs(); // Call to fetch and start everything
+showAlbums(); // Call to fetch and start everything
 audio.addEventListener("play", songinfo);
 audio.addEventListener("pause", songinfo);
 // Making the songinfo() function so that the  buttons are not pushed down each time the song name comes on the play bar
@@ -270,7 +301,6 @@ hideVolbar();
 // Update on screen resize too
 meq.addEventListener("change", hideVolbar);
 
-
 function playBarControl() {
 	let playbar = document.querySelector(".playbar");
 	let songItems = document.querySelectorAll(".songItem");
@@ -280,7 +310,7 @@ function playBarControl() {
 	function hidePlayBar() {
 		playbar.style.display = "none";
 	}
-	
+
 	if (meq.matches) {
 		hidePlayBar();
 		songItems.forEach((item) => {

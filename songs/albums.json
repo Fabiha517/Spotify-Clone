@@ -1,0 +1,86 @@
+[
+    {
+        "name": "album11",
+        "cover": "songs/album11/cover.jpg",
+        "displayName": "Karde Karam Tu",
+        "desc": "Soulful devotion meets contemporary rhythm in this emotional Punjabi collection."
+    },
+    {
+        "name": "album12",
+        "cover": "songs/album12/cover.jpg",
+        "displayName": "Finding Her",
+        "desc": "A dreamy, emotional journey through love, longing, and discovery."
+    },
+    {
+        "name": "album13",
+        "cover": "songs/album13/cover.jpg",
+        "displayName": "Haseen",
+        "desc": "Romantic melodies with serene vibes, perfect for peaceful moments."
+    },
+    {
+        "name": "album14",
+        "cover": "songs/album14/cover.jpg",
+        "displayName": "Lost & Found",
+        "desc": "Embrace the highs and lows of life with this emotionally rich soundtrack."
+    },
+    {
+        "name": "album5",
+        "cover": "songs/album5/cover.jpg",
+        "displayName": "Karan Aujla",
+        "desc": "A powerful collection of Karan Aujla's chart-topping Punjabi tracks and lyrical fire."
+    },
+    {
+        "name": "album6",
+        "cover": "songs/album6/cover.jpg",
+        "displayName": "Uplifting",
+        "desc": "A feel-good mix of energizing tracks to motivate and inspire your every move."
+    },
+    {
+        "name": "album7",
+        "cover": "songs/album7/cover.jpg",
+        "displayName": "Brighten Your Day",
+        "desc": "Joyful, breezy tunes to kickstart your mood and add sunshine to your playlist."
+    },
+    {
+        "name": "album8",
+        "cover": "songs/album8/cover.jpg",
+        "displayName": "MF Gabhru",
+        "desc": "High-energy Punjabi bangers and bold beats straight from MF Gabhru's style vault."
+    },
+    {
+        "name": "album9",
+        "cover": "songs/album9/cover.jpg",
+        "displayName": "High On You",
+        "desc": "A vibrant mix of love, rhythm, and electrifying energy that gets you hooked from the first beat."
+    },
+    {
+        "name": "album10",
+        "cover": "songs/album10/cover.jpg",
+        "displayName": "Sirra",
+        "desc": "Swag-packed tracks and energetic beats that scream confidence and cool."
+    },
+    {
+        "name": "album1",
+        "cover": "songs/album1/cover.jpg",
+        "displayName": "Diljit Dosanjh",
+        "desc": "Punjabi hits and energetic anthems by Diljit Dosanjh."
+    },
+    {
+        "name": "album2",
+        "cover": "songs/album2/cover.jpg",
+        "displayName": "Funky",
+        "desc": "Retro grooves and funky basslines to get your feet moving."
+    },
+    {
+        "name": "album3",
+        "cover": "songs/album3/cover.jpg",
+        "displayName": "Dark",
+        "desc": "Brooding, atmospheric soundscapes for when you're feeling introspective."
+    },
+    {
+        "name": "album4",
+        "cover": "songs/album4/cover.jpg",
+        "displayName": "Chill",
+        "desc": "Smooth, laid-back tracks to relax and unwind anytime, anywhere."
+    }
+]
