@@ -104,7 +104,7 @@ function songinfo() {
 	let songinfo = document.querySelector(".songinfo");
 	let music = document.querySelector(".music");
 	console.log("Audio paused?", audio.paused);
-	if (audio.ended ) {
+	if (audio.ended) {
 		music.style.visibility = "hidden";
 		songinfo.style.visibility = "hidden";
 	} else {
@@ -140,7 +140,7 @@ function showDuration() {
 
 	// Update current time every second
 	audio.addEventListener("timeupdate", () => {
-		currentTimeText.textContent = `${formatTime(audio.currentTime)} / `;
+		currentTimeText.textContent = `${formatTime(audio.currentTime)} /   `;
 		// Move the circle on the seekbar
 		const progress = (audio.currentTime / audio.duration) * 100;
 		circle.style.left = `${progress}%`;
@@ -266,9 +266,29 @@ function hideVolbar() {
 		removeHoverEffect();
 	}
 }
-
-// Run initially
 hideVolbar();
-
 // Update on screen resize too
 meq.addEventListener("change", hideVolbar);
+
+
+function playBarControl() {
+	let playbar = document.querySelector(".playbar");
+	let songItems = document.querySelectorAll(".songItem");
+	function showPlayBar() {
+		playbar.style.display = "block";
+	}
+	function hidePlayBar() {
+		playbar.style.display = "none";
+	}
+	
+	if (meq.matches) {
+		hidePlayBar();
+		songItems.forEach((item) => {
+			item.addEventListener("click", showPlayBar);
+		});
+	} else {
+		showPlayBar();
+	}
+}
+playBarControl();
+meq.addEventListener("change", playBarControl);

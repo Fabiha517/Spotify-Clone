@@ -20,7 +20,7 @@ body {
 }
 .right {
 	width: 75vw;
-	margin: 16px 0px;
+	margin: 16px 16px 16px 0px;
 	position: relative;
 }
 
@@ -312,7 +312,7 @@ body {
 	align-items: center;
 	gap: 8px;
 }
-.volumeContainer{
+.volumeContainer {
 	display: flex;
 	align-items: center;
 	gap: 8px;
@@ -328,7 +328,7 @@ body {
 }
 .music,
 .songinfo {
-  visibility: hidden;
+	visibility: hidden;
 }
 @media (max-width: 1000px) {
 	.left {
@@ -348,6 +348,7 @@ body {
 	.playbar {
 		justify-self: center;
 		width: 88vw;
+		bottom: 20px;
 	}
 	.seekbar {
 		justify-self: center;
@@ -366,7 +367,7 @@ body {
 	}
 	.songbuttons {
 		width: 0px;
-		gap: 0.9px;
+		gap: 3px;
 	}
 }
 @media (max-width: 500px) {
@@ -413,4 +414,14 @@ body {
 		max-width: 100%;
 		font-size: 14px;
 	}
+	.card-container {
+		justify-content: center;
+		margin: 2px;
+	}
+	.spotify-playlists .card {
+		width: 90vw;
+	}
+	.header > * {
+    padding: 10px;
+}
 }
