@@ -366,6 +366,7 @@ body {
 		width: 88vw;
 		bottom: 20px;
 	}
+
 	.seekbar {
 		justify-self: center;
 		width: 80vw;
@@ -385,9 +386,8 @@ body {
 		width: 0px;
 		gap: 3px;
 	}
-	.albumCard{
-	margin: 0 auto;
-
+	.albumCard {
+		margin: 0 auto;
 	}
 }
 @media (max-width: 500px) {
@@ -440,7 +440,7 @@ body {
 	.albumCard {
 		margin: 2px;
 		width: 86vw;
-		justify-self:center ;
+		justify-self: center;
 	}
 	.header > * {
 		padding: 10px;

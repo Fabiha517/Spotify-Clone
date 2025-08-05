@@ -24,7 +24,7 @@ async function showAlbums() {
 				album.name
 			}" style="width:100%; border-radius:8px; margin-bottom:0.5rem; ">
     <div class="albumName">${album.displayName}</div>
-		 <p class="albumDesc">${album.desc || ""}</p>
+		<p class="albumDesc">${album.desc || ""}</p>
   `;
 			albumCard.addEventListener("click", () => loadAlbum(album.name));
 			albumsList.appendChild(albumCard);
