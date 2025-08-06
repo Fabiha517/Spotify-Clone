@@ -186,13 +186,8 @@ body {
   position: fixed;
   bottom: 50px;
   
-  /* Content alignment */
-  display: block;
-  overflow: hidden;
-
-  z-index: 1000; /* Ensure it's above other elements */
-  opacity: 1 !important;
-  visibility: visible !important;
+ 
+  
 }
 .songinfo {
   margin-bottom: 8px;
