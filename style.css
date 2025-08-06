@@ -185,8 +185,7 @@ body {
   /* positioning */
   position: fixed;
   bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
+  
   /* Content alignment */
   display: block;
   overflow: hidden;
