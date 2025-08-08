@@ -229,14 +229,16 @@ clickseekbar();
 
 function adjustVolume() {
   const volbar = document.querySelector(".volbar");
+  const rect = volbar.getBoundingClientRect();
   const volFill = document.querySelector(".volFill");
   volbar.addEventListener("click", (e) => {
     const volbarwidth = volbar.clientWidth;
     const clickX = e.offsetX;
     const volume = clickX / volbarwidth;
     audio.volume = volume;
-
+    
     volFill.style.width = `${volume * 100}%`;
+    
   });
   const volume = document.querySelector(".volume img");
   volume.src = "sound.svg";
@@ -252,6 +254,8 @@ function adjustVolume() {
     }
   });
 }
+
+
 adjustVolume();
 function hamburger() {
   let hamburger = document.querySelector(".hamburger");

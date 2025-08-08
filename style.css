@@ -402,10 +402,13 @@ body {
     height: 88px;
     transition: opacity 0.3s ease-in-out;
     opacity: 1;
+    width: 100vw;
+    border-radius: 0px;
+    bottom: 0px;
   }
   .songbuttons img {
-    height: 15px;
-    width: 15px;
+    height: 20px;
+    width: 20px;
     padding: 2px;
   }
   .top-section {
@@ -436,12 +439,16 @@ body {
     transition: width 0.3s ease;
     overflow: hidden;
   }
+  .time{
+    margin-bottom: 5px;
+  }
   .songinfo {
     position: absolute;
     bottom: -5px;
     left: 20px;
     max-width: 100%;
     font-size: 14px;
+    margin-bottom: 10px;
   }
   .albums {
     justify-items: center;
