@@ -38,18 +38,9 @@ What I learned
 * Improving UI responsiveness across devices
 * Working with state management for songs and albums
 
-Future Improvements
-
-* Add shuffle and repeat functionality
-* Improve animations and transitions
-* Add volume control and better seek bar interaction
-* Optimize code structure for scalability
-* Add backend support for real streaming
 
 Author
 
 GitHub: @Fabiha517
 Project: Spotify Clone (Vanilla JS)
 
-n (very professional + engaging)”
-* 🚀 “portfolio project description version (short but impressive)”
